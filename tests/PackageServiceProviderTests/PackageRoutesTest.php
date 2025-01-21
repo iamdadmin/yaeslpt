@@ -1,6 +1,6 @@
 <?php
 
-use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Yaeslpt\Package;
 
 use function Spatie\PestPluginTestTime\testTime;
 
