@@ -1,8 +1,9 @@
 <?php
 
+use Iamdadmin\Yaeslpt\Package;
+
 use function PHPUnit\Framework\assertFileDoesNotExist;
 use function PHPUnit\Framework\assertFileExists;
-use Iamdadmin\Yaslpt\Package;
 
 trait ConfigurePackagePublishableProviderTest
 {

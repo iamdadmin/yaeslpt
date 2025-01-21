@@ -1,7 +1,8 @@
 <?php
 
+use Iamdadmin\Yaeslpt\Package;
+
 use function PHPUnit\Framework\assertEquals;
-use Iamdadmin\Yaslpt\Package;
 
 trait ConfigurePackageMultipleConfigTest
 {

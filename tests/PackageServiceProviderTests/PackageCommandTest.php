@@ -1,7 +1,7 @@
 <?php
 
-use Iamdadmin\Yaslpt\Package;
-use Iamdadmin\Yaslpt\Tests\TestClasses\TestCommand;
+use Iamdadmin\Yaeslpt\Package;
+use Iamdadmin\Yaeslpt\Tests\TestClasses\TestCommand;
 
 trait ConfigurePackageCommandTest
 {

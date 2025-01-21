@@ -1,7 +1,7 @@
 <?php
 
-use Iamdadmin\Yaslpt\Commands\InstallCommand;
-use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Yaeslpt\Commands\InstallCommand;
+use Iamdadmin\Yaeslpt\Package;
 use function Spatie\PestPluginTestTime\testTime;
 
 trait ConfigureStarRepoTest

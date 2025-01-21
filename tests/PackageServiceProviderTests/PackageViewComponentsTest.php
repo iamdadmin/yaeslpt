@@ -1,9 +1,10 @@
 <?php
 
+use Iamdadmin\Yaeslpt\Package;
+use Iamdadmin\Yaeslpt\Tests\TestPackage\Src\Components\TestComponent;
+
 use function PHPUnit\Framework\assertFileExists;
 use function PHPUnit\Framework\assertStringStartsWith;
-use Iamdadmin\Yaslpt\Package;
-use Iamdadmin\Yaslpt\Tests\TestPackage\Src\Components\TestComponent;
 
 trait ConfigurePackageViewComponentsTest
 {

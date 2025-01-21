@@ -1,7 +1,8 @@
 <?php
 
+use Iamdadmin\Yaeslpt\Package;
+
 use function PHPUnit\Framework\assertTrue;
-use Iamdadmin\Yaslpt\Package;
 
 trait ConfigurePackageNameTest
 {

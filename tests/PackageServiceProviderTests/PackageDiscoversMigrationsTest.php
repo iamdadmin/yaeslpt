@@ -1,8 +1,8 @@
 <?php
 
-namespace Iamdadmin\Yaslpt\Tests\PackageServiceProviderTests;
+namespace Iamdadmin\Yaeslpt\Tests\PackageServiceProviderTests;
 
-use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Yaeslpt\Package;
 use function Spatie\PestPluginTestTime\testTime;
 
 trait ConfigurePackageDiscoverMigrationsTest
