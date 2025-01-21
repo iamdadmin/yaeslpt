@@ -7,17 +7,6 @@ use Spatie\LaravelPackageTools\PackageServiceProvider as BaseServiceProvider;
 
 abstract class PackageServiceProvider extends BaseServiceProvider
 {
-    public function registerConfigs()
-    {
-        if (empty($this->package->configFileNames)) {
-            return;
-        }
-
-        foreach ($this->package->configFileNames as $configFileName) {
-            $this->mergeConfigFrom($this->package->basePath("/../config/{$configFileName}.php"), $configFileName);
-        }
-    }
-
     public function boot()
     {
         $this->bootingPackage();
