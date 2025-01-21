@@ -1,7 +1,7 @@
 <?php
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\Tests\TestClasses\TestCommand;
+use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Yaslpt\Tests\TestClasses\TestCommand;
 
 trait ConfigurePackageCommandWithinAppTest
 {

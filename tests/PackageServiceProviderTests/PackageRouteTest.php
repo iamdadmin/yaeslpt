@@ -1,6 +1,6 @@
 <?php
 
-use Spatie\LaravelPackageTools\Package;
+use Iamdadmin\Yaslpt\Package;
 use function Spatie\PestPluginTestTime\testTime;
 
 trait ConfigurePackageRouteTest

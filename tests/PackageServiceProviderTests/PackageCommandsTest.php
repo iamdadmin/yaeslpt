@@ -1,10 +1,10 @@
 <?php
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\Tests\TestClasses\FourthTestCommand;
-use Spatie\LaravelPackageTools\Tests\TestClasses\OtherTestCommand;
-use Spatie\LaravelPackageTools\Tests\TestClasses\TestCommand;
-use Spatie\LaravelPackageTools\Tests\TestClasses\ThirdTestCommand;
+use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Yaslpt\Tests\TestClasses\FourthTestCommand;
+use Iamdadmin\Yaslpt\Tests\TestClasses\OtherTestCommand;
+use Iamdadmin\Yaslpt\Tests\TestClasses\TestCommand;
+use Iamdadmin\Yaslpt\Tests\TestClasses\ThirdTestCommand;
 
 trait ConfigurePackageCommandsTest
 {

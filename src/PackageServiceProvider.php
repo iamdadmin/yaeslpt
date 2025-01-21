@@ -1,49 +1,12 @@
 <?php
 
-namespace Spatie\LaravelPackageTools;
+namespace Iamdadmin\Yaslpte;
 
-use Carbon\Carbon;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use ReflectionClass;
-use Spatie\LaravelPackageTools\Exceptions\InvalidPackage;
+use Spatie\LaravelPackageTools\PackageServiceProvider as BaseServiceProvider;
 
-abstract class PackageServiceProvider extends ServiceProvider
+abstract class PackageServiceProvider extends BaseServiceProvider
 {
-    protected Package $package;
-
-    abstract public function configurePackage(Package $package): void;
-
-    /** @throws InvalidPackage */
-    public function register()
-    {
-        $this->registeringPackage();
-
-        $this->package = $this->newPackage();
-        $this->package->setBasePath($this->getPackageBaseDir());
-
-        $this->configurePackage($this->package);
-        if (empty($this->package->name)) {
-            throw InvalidPackage::nameIsRequired();
-        }
-
-        $this->registerConfigs();
-        $this->packageRegistered();
-
-        return $this;
-    }
-
-    public function registeringPackage()
-    {
-    }
-
-    public function newPackage(): Package
-    {
-        return new Package();
-    }
-
     public function registerConfigs()
     {
         if (empty($this->package->configFileNames)) {
@@ -53,10 +16,6 @@ abstract class PackageServiceProvider extends ServiceProvider
         foreach ($this->package->configFileNames as $configFileName) {
             $this->mergeConfigFrom($this->package->basePath("/../config/{$configFileName}.php"), $configFileName);
         }
-    }
-
-    public function packageRegistered()
-    {
     }
 
     public function boot()
@@ -76,7 +35,9 @@ abstract class PackageServiceProvider extends ServiceProvider
             ->bootPackageViews()
             ->bootPackageViewComponents()
             ->bootPackageViewComposers()
-            ->bootPackageViewSharedData();
+            ->bootPackageViewSharedData()
+            ->bootPackageModels()
+            ->bootPackageSeeders();
 
         $this->packageBooted();
 
@@ -175,6 +136,20 @@ abstract class PackageServiceProvider extends ServiceProvider
 
         return $this;
     }
+    
+    protected function bootPackageModels()
+    {
+        if ($this->app->runningInConsole()) {
+            foreach ($this->package->modelFileNames as $modelFileName) {
+                $vendorModel = $this->package->basePath("/../app/Models/{$modelFileName}.php");
+                $appModel = app_path('Models/'.Str::ucfirst($modelFileName).'.php');
+
+                $this->publishes([$vendorModel => $appModel], "{$this->package->shortName()}-models");
+            }
+        }
+
+        return $this;
+    }
 
     protected function bootPackageMigrations(): self
     {
@@ -236,6 +211,18 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
 
         return $this;
+    }
+
+    protected function bootPackageSeeders()
+    {
+        if ($this->app->runningInConsole()) {
+            foreach ($this->package->seederFileNames as $seederFileName) {
+                $vendorSeeder = findFileWithExtensions($this->package->basePath("/../database/seeders/{$seederFileName}"));
+                $appSeeder = database_path('seeders/'.Str::studly($seederFileName).'.php');
+
+                $this->publishes([$vendorSeeder => $appSeeder], "{$this->package->shortName()}-seeders");
+            }
+        }
     }
 
     protected function bootPackageTranslations(): self
@@ -377,5 +364,17 @@ abstract class PackageServiceProvider extends ServiceProvider
         $migrationFileName = Str::of($migrationFileName)->snake()->finish('.php');
 
         return database_path($migrationsPath . $timestamp . '_' . $migrationFileName);
+    }
+    
+    protected function findFileWithExtensions(string $basePath, array $extensions = ['.stub.php', '.stub', '.php']): ?string
+    {
+        foreach ($extensions as $ext) {
+            $path = $basePath.$ext;
+            if (file_exists($path)) {
+                return $path;
+            }
+        }
+
+        return null;
     }
 }

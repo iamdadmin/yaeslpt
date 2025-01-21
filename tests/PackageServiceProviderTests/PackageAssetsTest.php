@@ -1,7 +1,7 @@
 <?php
 
 use function PHPUnit\Framework\assertFileExists;
-use Spatie\LaravelPackageTools\Package;
+use Iamdadmin\Yaslpt\Package;
 
 trait ConfigurePackageAssetsTest
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\LaravelPackageTools\Exceptions;
+namespace Iamdadmin\Yaslpt\Exceptions;
 
 use Exception;
 

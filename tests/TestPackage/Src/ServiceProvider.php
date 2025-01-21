@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Spatie\LaravelPackageTools\Tests\TestPackage\Src;
+namespace Iamdadmin\Yaslpt\Tests\TestPackage\Src;
 
 use Closure;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Yaslpt\PackageServiceProvider;
 
 class ServiceProvider extends PackageServiceProvider
 {

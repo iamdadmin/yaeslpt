@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\LaravelPackageTools\Tests\TestClasses;
+namespace Iamdadmin\Yaslpt\Tests\TestClasses;
 
 use Illuminate\Console\Command;
 

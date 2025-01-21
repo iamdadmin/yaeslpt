@@ -1,7 +1,7 @@
 <?php
 
 use function PHPUnit\Framework\assertEquals;
-use Spatie\LaravelPackageTools\Package;
+use Iamdadmin\Yaslpt\Package;
 
 trait ConfigurePackageMultipleConfigTest
 {

@@ -1,8 +1,8 @@
 <?php
 
 use function PHPUnit\Framework\assertDirectoryExists;
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
-use Spatie\LaravelPackageTools\Package;
+use Iamdadmin\Yaslpt\Commands\InstallCommand;
+use Iamdadmin\Yaslpt\Package;
 use function Spatie\PestPluginTestTime\testTime;
 
 trait ConfigureAssetsTest

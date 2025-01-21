@@ -2,7 +2,7 @@
 
 use function PHPUnit\Framework\assertFileExists;
 use function PHPUnit\Framework\assertStringStartsWith;
-use Spatie\LaravelPackageTools\Package;
+use Iamdadmin\Yaslpt\Package;
 
 trait ConfigurePackageViewsTest
 {
