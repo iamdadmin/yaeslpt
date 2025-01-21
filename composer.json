@@ -16,12 +16,13 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.18"
+        "php": "^8.2",
+        "spatie/laravel-package-tools": "1.18.1"
     },
     "require-dev": {
         "laravel/pint": "^1.20",
         "mockery/mockery": "^1.5",
+        "larastan/larastan": "^3.0",
         "orchestra/testbench": "^7.7|^8.0|^9.0",
         "pestphp/pest": "^1.22|^2",
         "phpunit/phpunit": "^9.5.24|^10.5",
@@ -29,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Iamdadmin\\Yaesplt\\": "src"
+            "Iamdadmin\\Yaeslpt\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Iamdadmin\\Yaesplt\\Tests\\": "tests"
+            "Iamdadmin\\Yaeslpt\\Tests\\": "tests"
         }
     },
     "scripts": {
