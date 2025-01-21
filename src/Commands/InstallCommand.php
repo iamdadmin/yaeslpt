@@ -1,6 +1,6 @@
 <?php
 
-namespace Iamdadmin\Yaslpte\Commands;
+namespace Iamdadmin\Yaeslpt\Commands;
 
 use Spatie\LaravelPackageTools\Commands\InstallCommand as BaseCommand;
 

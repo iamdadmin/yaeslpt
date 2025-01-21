@@ -1,6 +1,6 @@
 <?php
 
-namespace Iamdadmin\Yaslpt\Exceptions;
+namespace Iamdadmin\Yaeslpt\Exceptions;
 
 use Exception;
 

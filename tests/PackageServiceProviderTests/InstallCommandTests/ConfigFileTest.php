@@ -1,8 +1,9 @@
 <?php
 
-use function PHPUnit\Framework\assertFileExists;
 use Iamdadmin\Yaslpt\Commands\InstallCommand;
 use Iamdadmin\Yaslpt\Package;
+
+use function PHPUnit\Framework\assertFileExists;
 use function Spatie\PestPluginTestTime\testTime;
 
 trait ConfigureConfigFileTest

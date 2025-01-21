@@ -1,6 +1,6 @@
 <?php
 
-namespace Iamdadmin\Yaslpt\Tests\TestPackage\Src\Components;
+namespace Iamdadmin\Yaeslpt\Tests\TestPackage\Src\Components;
 
 use Illuminate\View\Component;
 
@@ -11,7 +11,6 @@ class TestComponent extends Component
     /**
      * Create the component instance.
      *
-     * @param  string  $message
      * @return void
      */
     public function __construct(string $message)
@@ -26,6 +25,6 @@ class TestComponent extends Component
      */
     public function render()
     {
-        return '<div>' . $this->message . '</div>';
+        return '<div>'.$this->message.'</div>';
     }
 }

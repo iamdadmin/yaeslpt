@@ -1,6 +1,6 @@
 <?php
 
-namespace Iamdadmin\Yaslpte;
+namespace Iamdadmin\Yaeslpt;
 
 use Illuminate\Support\Str;
 use Spatie\LaravelPackageTools\PackageServiceProvider as BaseServiceProvider;

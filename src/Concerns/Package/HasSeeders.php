@@ -1,6 +1,6 @@
 <?php
 
-namespace Iamdadmin\Yaslpte\Concerns\Package;
+namespace Iamdadmin\Yaeslpt\Concerns\Package;
 
 trait HasSeeders
 {

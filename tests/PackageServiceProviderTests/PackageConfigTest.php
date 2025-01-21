@@ -1,8 +1,9 @@
 <?php
 
+use Iamdadmin\Yaslpt\Package;
+
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertFileExists;
-use Iamdadmin\Yaslpt\Package;
 
 trait ConfigurePackageConfigTest
 {

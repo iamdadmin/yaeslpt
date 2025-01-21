@@ -1,7 +1,8 @@
 <?php
 
-use function PHPUnit\Framework\assertStringStartsWith;
 use Iamdadmin\Yaslpt\Package;
+
+use function PHPUnit\Framework\assertStringStartsWith;
 
 trait ConfigurePackageViewComposerTest
 {

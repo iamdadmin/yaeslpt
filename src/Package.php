@@ -1,9 +1,9 @@
 <?php
 
-namespace Iamdadmin\Yaslpte;
+namespace Iamdadmin\Yaeslpt;
 
-use Iamdadmin\Yaslpte\Concerns\Package\HasModels;
-use Iamdadmin\Yaslpte\Concerns\Package\HasSeeders;
+use Iamdadmin\Yaeslpt\Concerns\Package\HasModels;
+use Iamdadmin\Yaeslpt\Concerns\Package\HasSeeders;
 use Spatie\LaravelPackageTools\Package as BasePackage;
 
 class Package extends BasePackage
