@@ -9,10 +9,10 @@ This package contains extensions for Spatie's excellent `Laravel-Package-Tools`.
 Here's an example of how it can be used; it's essentially a drop-in replacement for Laravel-Package-Tools, with some extra options on $package.
 
 ```php
-use Iamdadmin\Yaslpt\PackageServiceProvider;
-use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Yaeslpt\PackageServiceProvider;
+use Iamdadmin\Yaeslpt\Package;
 use MyPackage\ViewComponents\Alert;
-use Iamdadmin\Yaslpt\Commands\InstallCommand;
+use Iamdadmin\Yaeslpt\Commands\InstallCommand;
 
 class YourPackageServiceProvider extends PackageServiceProvider
 {
