@@ -6,7 +6,7 @@ trait HasSeeders
 {
     public array $seederFileNames = [];
 
-    public function HasSeederFile($seederFileName = null): static
+    public function HasSeeders($seederFileName = null): static
     {
         $seederFileName ??= $this->shortName();
 
