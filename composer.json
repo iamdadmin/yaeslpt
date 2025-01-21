@@ -1,18 +1,18 @@
 {
-    "name": "iamdadmin/yaslpte",
+    "name": "iamdadmin/yaeslpt",
     "description": "Extensions to Spatie's tools for creating packages",
     "keywords": [
         "iamdadmin",
         "laravel-package-tools",
-        "yaslpt"
+        "yaeslpt"
     ],
-    "homepage": "https://github.com/iamdadmin/yaslpt",
+    "homepage": "https://github.com/iamdadmin/yaeslpt",
     "license": "MIT",
     "authors": [
         {
             "name": "iamdadmin",
             "role": "Developer",
-            "homepage": "https://github.com/iamdadmin/yaslpt"
+            "homepage": "https://github.com/iamdadmin/yaeslpt"
         }
     ],
     "require": {
@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Iamdadmin\\Yasplte\\": "src"
+            "Iamdadmin\\Yaesplt\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Iamdadmin\\Yasplte\\Tests\\": "tests"
+            "Iamdadmin\\Yaesplt\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,6 +47,6 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
