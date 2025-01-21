@@ -1,7 +1,7 @@
 <?php
 
-use Iamdadmin\Yaslpt\Commands\InstallCommand;
-use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Iamdadmin\Yaeslpt\Commands\InstallCommand;
+use Iamdadmin\Iamdadmin\Yaeslpt\Package;
 
 use function PHPUnit\Framework\assertDirectoryExists;
 use function Spatie\PestPluginTestTime\testTime;
