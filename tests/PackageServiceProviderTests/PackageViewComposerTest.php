@@ -4,6 +4,8 @@ use Iamdadmin\Yaeslpt\Package;
 
 use function PHPUnit\Framework\assertStringStartsWith;
 
+use function PHPUnit\Framework\assertStringStartsWith;
+
 trait ConfigurePackageViewComposerTest
 {
     public function configurePackage(Package $package)

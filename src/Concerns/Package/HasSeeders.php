@@ -2,15 +2,13 @@
 
 namespace Iamdadmin\Yaeslpt\Concerns\Package;
 
-use Illuminate\Support\Str;
-
 trait HasSeeders
 {
     public array $seederFileNames = [];
 
-    public function HasSeeders($seederFileName = null): static
+    public function HasSeederFile($seederFileName = null): static
     {
-        $seederFileName ??= Str::studly($this->shortName().'Seeder');
+        $seederFileName ??= $this->shortName();
 
         if (! is_array($seederFileName)) {
             $seederFileName = [$seederFileName];
