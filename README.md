@@ -10,10 +10,10 @@ migrations, and more.
 Here's an example of how it can be used.
 
 ```php
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Spatie\LaravelPackageTools\Package;
+use Iamdadmin\Yaslpt\PackageServiceProvider;
+use Iamdadmin\Yaslpt\Package;
 use MyPackage\ViewComponents\Alert;
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Iamdadmin\Yaslpt\Commands\InstallCommand;
 
 class YourPackageServiceProvider extends PackageServiceProvider
 {
@@ -65,11 +65,11 @@ skeleton is structured perfectly to work perfectly with the `PackageServiceProvi
 
 ## Usage
 
-In your package you should let your service provider extend `Spatie\LaravelPackageTools\PackageServiceProvider`.
+In your package you should let your service provider extend `Iamdadmin\Yaslpt\PackageServiceProvider`.
 
 ```php
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Spatie\LaravelPackageTools\Package;
+use Iamdadmin\Yaslpt\PackageServiceProvider;
+use Iamdadmin\Yaslpt\Package;
 
 class YourPackageServiceProvider extends PackageServiceProvider
 {
@@ -439,9 +439,9 @@ When using Laravel Package Tools, you don't have to write an `InstallCommand` yo
 call, `hasInstallCommand` and configure it using a closure. Here's an example.
 
 ```php
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Iamdadmin\Yaslpt\PackageServiceProvider;
+use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Yaslpt\Commands\InstallCommand;
 
 class YourPackageServiceProvider extends PackageServiceProvider
 {
@@ -486,7 +486,7 @@ end when running `php artisan your-package-name:install`. You can use this to pe
 output.
 
 ```php
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Iamdadmin\Yaslpt\Commands\InstallCommand;
 
 public function configurePackage(Package $package): void
 {

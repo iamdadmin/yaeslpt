@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\LaravelPackageTools\Tests;
+namespace Iamdadmin\Yaslpt\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 

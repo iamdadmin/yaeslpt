@@ -1,24 +1,26 @@
 {
-    "name": "spatie/laravel-package-tools",
-    "description": "Tools for creating Laravel packages",
+    "name": "iamdadmin/yaslpte",
+    "description": "Extensions to Spatie's tools for creating packages",
     "keywords": [
-        "spatie",
-        "laravel-package-tools"
+        "iamdadmin",
+        "laravel-package-tools",
+        "yaslpt"
     ],
-    "homepage": "https://github.com/spatie/laravel-package-tools",
+    "homepage": "https://github.com/iamdadmin/yaslpt",
     "license": "MIT",
     "authors": [
         {
-            "name": "Freek Van der Herten",
-            "email": "freek@spatie.be",
-            "role": "Developer"
+            "name": "iamdadmin",
+            "role": "Developer",
+            "homepage": "https://github.com/iamdadmin/yaslpt"
         }
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/contracts": "^9.28|^10.0|^11.0"
+        "spatie/laravel-package-tools": "^1.18"
     },
     "require-dev": {
+        "laravel/pint": "^1.20",
         "mockery/mockery": "^1.5",
         "orchestra/testbench": "^7.7|^8.0|^9.0",
         "pestphp/pest": "^1.22|^2",
@@ -27,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\LaravelPackageTools\\": "src"
+            "Iamdadmin\\Yasplte\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\LaravelPackageTools\\Tests\\": "tests"
+            "Iamdadmin\\Yasplte\\Tests\\": "tests"
         }
     },
     "scripts": {

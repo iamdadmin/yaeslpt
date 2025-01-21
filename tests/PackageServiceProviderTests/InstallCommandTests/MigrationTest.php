@@ -1,7 +1,7 @@
 <?php
 
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
-use Spatie\LaravelPackageTools\Package;
+use Iamdadmin\Yaslpt\Commands\InstallCommand;
+use Iamdadmin\Yaslpt\Package;
 
 trait ConfigureMigrationTest
 {
