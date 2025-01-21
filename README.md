@@ -67,12 +67,12 @@ $package
     ->hasModels();
 ```
 
-* Package
- * app
-  * app/Models
-   * your-package-name.php
- * src
- * tests
+- Package
+  - app
+    - app/Models
+      - your-package-name.php
+  - src
+  - tests
 
 Example 2. Provide a custom model name. This is case SENSITIVE and will assume whatever case you provide, but will publish in `Str::studly` format to align with conventions.
 
@@ -82,12 +82,12 @@ $package
     ->hasModels('MyModelFile');
 ```
 
-* Package
- * app
-  * app/Models
-   * MyModelFile.php
- * src
- * tests
+- Package
+  - app
+    - app/Models
+      - MyModelFile.php
+  - src
+  - tests
 
 Example 3. Provide multiple models. Again, this is case SENSITIVE, but will publish in `Str::studly` format to align with conventions. You will need to pass *all* models including the default one if you're using it.
 
@@ -103,15 +103,15 @@ $package
         ]);
 ```
 
-* Package
- * app
-  * app/Models
-   * your-package-name.php
-   * MyModelFile.php
-   * MySecondModelFile.php
-   * alowercasemodelfile.php
- * src
- * tests
+- Package
+  - app
+    - app/Models
+      - your-package-name.php
+      - MyModelFile.php
+      - MySecondModelFile.php
+      - alowercasemodelfile.php
+  - src
+  - tests
 
 Using this method will make the model(s) publishable. Users of your package will be able to publish with the following command.
 
