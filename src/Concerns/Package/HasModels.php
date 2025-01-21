@@ -6,7 +6,7 @@ trait HasModels
 {
     public array $modelFileNames = [];
 
-    public function HasModelFile($modelFileName = null): static
+    public function HasModels($modelFileName = null): static
     {
         $modelFileName ??= $this->shortName();
 
