@@ -1,10 +1,10 @@
 <?php
 
-use Iamdadmin\Yaslpt\Package;
-use Iamdadmin\Yaslpt\Tests\TestClasses\FourthTestCommand;
-use Iamdadmin\Yaslpt\Tests\TestClasses\OtherTestCommand;
-use Iamdadmin\Yaslpt\Tests\TestClasses\TestCommand;
-use Iamdadmin\Yaslpt\Tests\TestClasses\ThirdTestCommand;
+use Iamdadmin\Yaeslpt\Package;
+use Iamdadmin\Yaeslpt\Tests\TestClasses\FourthTestCommand;
+use Iamdadmin\Yaeslpt\Tests\TestClasses\OtherTestCommand;
+use Iamdadmin\Yaeslpt\Tests\TestClasses\TestCommand;
+use Iamdadmin\Yaeslpt\Tests\TestClasses\ThirdTestCommand;
 
 trait ConfigurePackageCommandsTest
 {

@@ -1,12 +1,60 @@
 <?php
 
-namespace Iamdadmin\Yaslpte;
+namespace Iamdadmin\Yaeslpt;
 
+use Carbon\Carbon;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use Spatie\LaravelPackageTools\PackageServiceProvider as BaseServiceProvider;
+use ReflectionClass;
+use Spatie\LaravelPackageTools\Exceptions\InvalidPackage;
 
-abstract class PackageServiceProvider extends BaseServiceProvider
+abstract class PackageServiceProvider extends ServiceProvider
 {
+    protected Package $package;
+
+    abstract public function configurePackage(Package $package): void;
+
+    /** @throws InvalidPackage */
+    public function register()
+    {
+        $this->registeringPackage();
+
+        $this->package = $this->newPackage();
+        $this->package->setBasePath($this->getPackageBaseDir());
+
+        $this->configurePackage($this->package);
+        if (empty($this->package->name)) {
+            throw InvalidPackage::nameIsRequired();
+        }
+
+        $this->registerConfigs();
+        $this->packageRegistered();
+
+        return $this;
+    }
+
+    public function registeringPackage() {}
+
+    public function newPackage(): Package
+    {
+        return new Package;
+    }
+
+    public function registerConfigs()
+    {
+        if (empty($this->package->configFileNames)) {
+            return;
+        }
+
+        foreach ($this->package->configFileNames as $configFileName) {
+            $this->mergeConfigFrom($this->package->basePath("/../config/{$configFileName}.php"), $configFileName);
+        }
+    }
+
+    public function packageRegistered() {}
+
     public function boot()
     {
         $this->bootingPackage();
@@ -33,13 +81,9 @@ abstract class PackageServiceProvider extends BaseServiceProvider
         return $this;
     }
 
-    public function bootingPackage()
-    {
-    }
+    public function bootingPackage() {}
 
-    public function packageBooted()
-    {
-    }
+    public function packageBooted() {}
 
     protected function getPackageBaseDir(): string
     {

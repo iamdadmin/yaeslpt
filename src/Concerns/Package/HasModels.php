@@ -1,12 +1,12 @@
 <?php
 
-namespace Iamdadmin\Yaslpte\Concerns\Package;
+namespace Iamdadmin\Yaeslpt\Concerns\Package;
 
 trait HasModels
 {
     public array $modelFileNames = [];
 
-    public function HasModelFile($modelFileName = null): static
+    public function HasModels($modelFileName = null): static
     {
         $modelFileName ??= $this->shortName();
 

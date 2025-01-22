@@ -1,6 +1,6 @@
 <?php
 
-namespace Iamdadmin\Yaslpt\Tests\TestClasses;
+namespace Iamdadmin\Yaeslpt\Tests\TestClasses;
 
 use Illuminate\Console\Command;
 

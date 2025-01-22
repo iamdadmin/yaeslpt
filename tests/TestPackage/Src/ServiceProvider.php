@@ -1,11 +1,10 @@
 <?php
 
-
-namespace Iamdadmin\Yaslpt\Tests\TestPackage\Src;
+namespace Iamdadmin\Yaeslpt\Tests\TestPackage\Src;
 
 use Closure;
-use Iamdadmin\Yaslpt\Package;
-use Iamdadmin\Yaslpt\PackageServiceProvider;
+use Iamdadmin\Yaeslpt\Package;
+use Iamdadmin\Yaeslpt\PackageServiceProvider;
 
 class ServiceProvider extends PackageServiceProvider
 {
@@ -13,8 +12,7 @@ class ServiceProvider extends PackageServiceProvider
 
     public function configurePackage(Package $package): void
     {
-        $configClosure = self::$configurePackageUsing ?? function (Package $package) {
-        };
+        $configClosure = self::$configurePackageUsing ?? function (Package $package) {};
 
         ($configClosure)($package);
     }

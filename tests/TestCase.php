@@ -1,6 +1,6 @@
 <?php
 
-namespace Iamdadmin\Yaslpt\Tests;
+namespace Iamdadmin\Yaeslpt\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 
