@@ -1,7 +1,7 @@
 <?php
 
-use function PHPUnit\Framework\assertFileExists;
 use Iamdadmin\Yaeslpt\Package;
+use function PHPUnit\Framework\assertFileExists;
 
 trait ConfigurePackageAssetsTest
 {
