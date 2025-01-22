@@ -363,9 +363,9 @@ abstract class PackageServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             foreach ($this->package->seederFileNames as $seederFileName) {
                 $vendorSeeder = $this->package->basePath("/../database/seeders/{$seederFileName}.php");
-                $appSeeder = database_path('seeders/'.Str::studly($seederFileName).'Seeder.php');
+                $appSeeder = database_path('seeders/'.Str::studly($seederFileName).'.php');
 
-                $this->publishes([$vendorSeeder => $appSeeder], "{$this->package->shortName()}-seeder");
+                $this->publishes([$vendorSeeder => $appSeeder], "{$this->package->shortName()}-seeders");
             }
         }
     }
