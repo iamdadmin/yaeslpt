@@ -9,9 +9,9 @@
 use Iamdadmin\Yaeslpt\Tests\PackageServiceProviderTests\PackageServiceProviderTestCase;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Symfony\Component\Finder\SplFileInfo;
-
 use function PHPUnit\Framework\assertTrue;
+
+use Symfony\Component\Finder\SplFileInfo;
 
 uses(PackageServiceProviderTestCase::class)->in('PackageServiceProviderTests');
 

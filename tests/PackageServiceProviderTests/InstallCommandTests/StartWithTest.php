@@ -1,8 +1,8 @@
 <?php
 
-use function PHPUnit\Framework\assertEquals;
 use Iamdadmin\Yaeslpt\Commands\InstallCommand;
 use Iamdadmin\Yaeslpt\Package;
+use function PHPUnit\Framework\assertEquals;
 use function Spatie\PestPluginTestTime\testTime;
 
 trait ConfigureStartWithTest
