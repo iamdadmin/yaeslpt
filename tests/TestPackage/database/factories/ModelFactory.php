@@ -1,6 +1,6 @@
 <?php
 
-namespace Iamdadmin\Yaslpt\Database\Factories;
+namespace Iamdadmin\Yaeslpt\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

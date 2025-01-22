@@ -6,12 +6,12 @@
 |--------------------------------------------------------------------------
 */
 
-
+use Iamdadmin\Yaeslpt\Tests\PackageServiceProviderTests\PackageServiceProviderTestCase;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use function PHPUnit\Framework\assertTrue;
-use Iamdadmin\Yaslpt\Tests\PackageServiceProviderTests\PackageServiceProviderTestCase;
 use Symfony\Component\Finder\SplFileInfo;
+
+use function PHPUnit\Framework\assertTrue;
 
 uses(PackageServiceProviderTestCase::class)->in('PackageServiceProviderTests');
 
@@ -26,7 +26,6 @@ uses(PackageServiceProviderTestCase::class)->in('PackageServiceProviderTests');
 | Functions
 |--------------------------------------------------------------------------
 */
-
 
 function assertMigrationPublished(string $fileName)
 {

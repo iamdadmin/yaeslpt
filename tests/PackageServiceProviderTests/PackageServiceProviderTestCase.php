@@ -1,11 +1,11 @@
 <?php
 
-namespace Iamdadmin\Yaslpt\Tests\PackageServiceProviderTests;
+namespace Iamdadmin\Yaeslpt\Tests\PackageServiceProviderTests;
 
 use Illuminate\Support\Facades\File;
-use Iamdadmin\Yaslpt\Package;
-use Iamdadmin\Yaslpt\Tests\TestCase;
-use Iamdadmin\Yaslpt\Tests\TestPackage\Src\ServiceProvider;
+use Iamdadmin\Yaeslpt\Package;
+use Iamdadmin\Yaeslpt\Tests\TestCase;
+use Iamdadmin\Yaeslpt\Tests\TestPackage\Src\ServiceProvider;
 use function Spatie\PestPluginTestTime\testTime;
 use Symfony\Component\Finder\SplFileInfo;
 

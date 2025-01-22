@@ -2,8 +2,8 @@
 
 use function PHPUnit\Framework\assertStringContainsString;
 use function PHPUnit\Framework\assertStringNotContainsString;
-use Iamdadmin\Yaslpt\Commands\InstallCommand;
-use Iamdadmin\Yaslpt\Package;
+use Iamdadmin\Yaeslpt\Commands\InstallCommand;
+use Iamdadmin\Yaeslpt\Package;
 
 trait ConfigureCopyAndRegisterServiceProviderInAppTest
 {
