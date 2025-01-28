@@ -35,9 +35,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         return $this;
     }
 
-    public function registeringPackage()
-    {
-    }
+    public function registeringPackage() {}
 
     public function newPackage(): Package
     {
@@ -55,9 +53,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    public function packageRegistered()
-    {
-    }
+    public function packageRegistered() {}
 
     public function boot()
     {
@@ -85,13 +81,9 @@ abstract class PackageServiceProvider extends ServiceProvider
         return $this;
     }
 
-    public function bootingPackage()
-    {
-    }
+    public function bootingPackage() {}
 
-    public function packageBooted()
-    {
-    }
+    public function packageBooted() {}
 
     protected function getPackageBaseDir(): string
     {
