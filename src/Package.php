@@ -11,7 +11,7 @@ class Package extends BasePackage
     use HasModels;
     use HasSeeders;
 
-    public function hasInstallCommand($callable)
+    public function hasInstallCommand($callable): static
     {
         parent::hasInstallCommand($callable);
     }
