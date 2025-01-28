@@ -35,9 +35,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         return $this;
     }
 
-    public function registeringPackage()
-    {
-    }
+    public function registeringPackage() {}
 
     public function newPackage(): Package
     {
@@ -55,42 +53,37 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    public function packageRegistered()
-    {
-    }
+    public function packageRegistered() {}
 
     public function boot()
     {
         $this->bootingPackage();
 
-        $this->bootAssets();
-        $this->bootCommands();
-        $this->bootConsoleCommands();
-        $this->bootConfigs();
-        $this->bootInertia();
-        $this->bootMigrations();
-        $this->bootModels();
-        $this->bootProviders();
-        $this->bootRoutes();
-        $this->bootSeeders();
-        $this->bootTranslations();
-        $this->bootViews();
-        $this->bootViewComponents();
-        $this->bootViewComposers();
-        $this->bootViewSharedData();
+        $this
+            ->bootPackageAssets()
+            ->bootPackageCommands()
+            ->bootPackageConsoleCommands()
+            ->bootPackageConfigs()
+            ->bootPackageInertia()
+            ->bootPackageMigrations()
+            ->bootPackageModels()
+            ->bootPackageProviders()
+            ->bootPackageRoutes()
+            ->bootPackageSeeders()
+            ->bootPackageTranslations()
+            ->bootPackageViews()
+            ->bootPackageViewComponents()
+            ->bootPackageViewComposers()
+            ->bootPackageViewSharedData();
 
         $this->packageBooted();
 
         return $this;
     }
 
-    public function bootingPackage()
-    {
-    }
+    public function bootingPackage() {}
 
-    public function packageBooted()
-    {
-    }
+    public function packageBooted() {}
 
     protected function getPackageBaseDir(): string
     {
@@ -106,7 +99,7 @@ abstract class PackageServiceProvider extends ServiceProvider
             : $this->package->viewNamespace;
     }
 
-    protected function bootAssets(): void
+    protected function bootPackageAssets(): void
     {
         if (! $this->package->hasAssets || ! $this->app->runningInConsole()) {
             return;
@@ -118,7 +111,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         $this->publishes([$vendorAssets => $appAssets], "{$this->package->shortName()}-assets");
     }
 
-    protected function bootCommands()
+    protected function bootPackageCommands()
     {
         if (empty($this->package->commands)) {
             return;
@@ -127,7 +120,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         $this->commands($this->package->commands);
     }
 
-    protected function bootConsoleCommands()
+    protected function bootPackageConsoleCommands()
     {
         if (empty($this->package->consoleCommands) || ! $this->app->runningInConsole()) {
             return;
@@ -136,7 +129,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         $this->commands($this->package->consoleCommands);
     }
 
-    protected function bootConfigs()
+    protected function bootPackageConfigs()
     {
         if ($this->app->runningInConsole()) {
             foreach ($this->package->configFileNames as $configFileName) {
@@ -148,7 +141,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    protected function bootInertia()
+    protected function bootPackageInertia()
     {
         if (! $this->package->hasInertiaComponents) {
             return;
@@ -167,7 +160,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    protected function bootMigrations()
+    protected function bootPackageMigrations()
     {
         if ($this->package->discoversMigrations) {
             $this->discoverMigrations();
@@ -199,7 +192,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    protected function bootProviders()
+    protected function bootPackageProviders()
     {
         if (! $this->package->publishableProviderName || ! $this->app->runningInConsole()) {
             return;
@@ -212,7 +205,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         $this->publishes([$vendorProvider => $appProvider], "{$this->package->shortName()}-provider");
     }
 
-    protected function bootRoutes()
+    protected function bootPackageRoutes()
     {
         if (empty($this->package->routeFileNames)) {
             return;
@@ -223,7 +216,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    protected function bootTranslations()
+    protected function bootPackageTranslations()
     {
         if (! $this->package->hasTranslations) {
             return;
@@ -247,7 +240,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    protected function bootViews()
+    protected function bootPackageViews()
     {
         if (! $this->package->hasViews) {
             return;
@@ -264,7 +257,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    protected function bootViewComponents()
+    protected function bootPackageViewComponents()
     {
         if (empty($this->package->viewComponents)) {
             return;
@@ -282,7 +275,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    protected function bootViewComposers()
+    protected function bootPackageViewComposers()
     {
         if (empty($this->package->viewComposers)) {
             return;
@@ -293,7 +286,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    protected function bootViewSharedData()
+    protected function bootPackageViewSharedData()
     {
         if (empty($this->package->sharedViewData)) {
             return;
@@ -354,11 +347,11 @@ abstract class PackageServiceProvider extends ServiceProvider
         return database_path($migrationsPath.$timestamp.'_'.$migrationFileName);
     }
 
-    protected function bootModels()
+    protected function bootPackageModels()
     {
         if ($this->app->runningInConsole()) {
             foreach ($this->package->modelFileNames as $modelFileName) {
-                $vendorModel = $this->package->basePath("/../app/Models/{$modelFileName}.php");
+                $vendorModel = findFileWithExtensions($this->package->basePath("/../app/Models/{$modelFileName}"));
                 $appModel = app_path('Models/'.Str::ucfirst($modelFileName).'.php');
 
                 $this->publishes([$vendorModel => $appModel], "{$this->package->shortName()}-models");
@@ -366,15 +359,27 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    protected function bootSeeders()
+    protected function bootPackageSeeders()
     {
         if ($this->app->runningInConsole()) {
             foreach ($this->package->seederFileNames as $seederFileName) {
-                $vendorSeeder = $this->package->basePath("/../database/seeders/{$seederFileName}.php");
+                $vendorSeeder = findFileWithExtensions($this->package->basePath("/../database/seeders/{$seederFileName}"));
                 $appSeeder = database_path('seeders/'.Str::studly($seederFileName).'.php');
 
                 $this->publishes([$vendorSeeder => $appSeeder], "{$this->package->shortName()}-seeders");
             }
         }
+    }
+
+    protected function findFileWithExtensions(string $basePath, array $extensions = ['.stub.php', '.stub', '.php']): ?string
+    {
+        foreach ($extensions as $ext) {
+            $path = $basePath.$ext;
+            if (file_exists($path)) {
+                return $path;
+            }
+        }
+
+        return null;
     }
 }

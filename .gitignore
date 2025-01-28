@@ -2,6 +2,7 @@
 .php_cs
 .php-cs-fixer.cache
 .phpunit.result.cache
+.phpunit.cache
 build
 composer.lock
 coverage
