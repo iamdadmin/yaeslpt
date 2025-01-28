@@ -35,9 +35,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         return $this;
     }
 
-    public function registeringPackage()
-    {
-    }
+    public function registeringPackage() {}
 
     public function newPackage(): Package
     {
@@ -55,9 +53,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
     }
 
-    public function packageRegistered()
-    {
-    }
+    public function packageRegistered() {}
 
     public function boot()
     {
@@ -85,13 +81,9 @@ abstract class PackageServiceProvider extends ServiceProvider
         return $this;
     }
 
-    public function bootingPackage()
-    {
-    }
+    public function bootingPackage() {}
 
-    public function packageBooted()
-    {
-    }
+    public function packageBooted() {}
 
     protected function getPackageBaseDir(): string
     {
@@ -178,7 +170,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         return $this;
     }
     
-    protected function bootPackageModels()
+    protected function bootPackageModels(): self
     {
         if ($this->app->runningInConsole()) {
             foreach ($this->package->modelFileNames as $modelFileName) {
@@ -254,7 +246,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         return $this;
     }
 
-    protected function bootPackageSeeders()
+    protected function bootPackageSeeders(): self
     {
         if ($this->app->runningInConsole()) {
             foreach ($this->package->seederFileNames as $seederFileName) {
@@ -264,6 +256,8 @@ abstract class PackageServiceProvider extends ServiceProvider
                 $this->publishes([$vendorSeeder => $appSeeder], "{$this->package->shortName()}-seeders");
             }
         }
+
+        return $this;
     }
 
     protected function bootPackageTranslations(): self
